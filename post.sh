@@ -1,6 +1,7 @@
 #!/bin/bash
-#Path for your octopress installation
-octopath=/path/to/your/octopress
+
+#Path to your octopress installation
+octopath='/path/to/your/octopress'
 #Editor to open the new markdown post in
 editorapp=Mou
 
@@ -11,5 +12,5 @@ fi
 
 cd $octopath
 rvm use 1.9.3@octopress
-octopost=$(rake new_post["{query}"]| grep -o 'source/_posts/.*')
+octopost=$(rake new_post['{query}']| grep -o 'source/_posts/.*')
 open -a "$editorapp" $octopath/$octopost
