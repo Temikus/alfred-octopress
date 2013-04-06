@@ -12,5 +12,6 @@ fi
 
 cd $octopath
 rvm use 1.9.3@octopress
+pwd > ~/Desktop/op_trace_pwd.log
 octopost=$(rake -t new_post['{query}'] 2>&1 | tee ~/Desktop/op_trace.log | grep -o 'source/_posts/.*')
 open -a "$editorapp" $octopath/$octopost
