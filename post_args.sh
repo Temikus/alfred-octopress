@@ -27,5 +27,5 @@ export 'LC_CTYPE=en_US.UTF-8'
 cd $OCTOPATH
 rvm use 1.9.3@octopress
 pwd >> $TRACEPATH/op_trace.log
-OCTOPOST=$(rake -t new_post['{query}'] 2>&1 | tee $TRACEPATH/op_trace.log/op_rake.log | grep -o 'source/_posts/.*')
+OCTOPOST=$(rake -t new_post[$1] 2>&1 | tee $TRACEPATH/op_trace.log/op_rake.log | grep -o 'source/_posts/.*')
 open -a "$EDITORAPP" $OCTOPATH/$OCTOPOST
