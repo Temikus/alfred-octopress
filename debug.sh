@@ -9,10 +9,8 @@
 OCTOPATH='/your/path/to/octopress'
 #Editor to open the new markdown post in
 EDITORAPP=Mou
-#Path to write traces to
-TRACEPATH='~/Desktop'
 
-pwd >> $TRACEPATH/op_trace.log
+pwd >> ~/Desktop/op_trace.log
 
 echo {query} >> $TRACEPATH/op_trace.log
 
@@ -24,8 +22,8 @@ fi
 #Exporting encoding
 export 'LC_CTYPE=en_US.UTF-8'
 
-cd $OCTOPATH
-rvm use 1.9.3@octopress
-pwd >> $TRACEPATH/op_trace.log
-OCTOPOST=$(rake -t new_post['{query}'] 2>&1 | tee $TRACEPATH/op_trace.log/op_rake.log | grep -o 'source/_posts/.*')
+cd $OCTOPATH >> ~/Desktop/op_trace.log
+rvm use 1.9.3@octopress >> ~/Desktop/op_trace.log
+pwd >> ~/Desktop/op_trace.log
+OCTOPOST=$(rake -t new_post['{query}'] 2>&1 | tee ~/Desktop/op_rake.log | grep -o 'source/_posts/.*')
 open -a "$EDITORAPP" $OCTOPATH/$OCTOPOST
