@@ -7,12 +7,12 @@ if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then
       source "$HOME/.rvm/scripts/rvm"
 fi
 
-cd $OCTOPATH
-rvm use 1.9.3@octopress
-rake generate
+cd $OCTOPATH >> /dev/null
+rvm use 1.9.3@octopress >> /dev/null
+rake generate >> /dev/null
 
 if [[ $? -eq 0 ]] ; then
-    terminal-notifier -message "Blog generated successfully!" -title "Octopress - Alfred"
+    echo "Blog generated successfully!"
 else
-    terminal-notifier -message "Errors while generating static content. Check the console." -title "Octopress - Alfred"
+    echo "Errors while generating static content. Check the console."
 fi
