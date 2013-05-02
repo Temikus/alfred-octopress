@@ -12,7 +12,7 @@ EDITORAPP=Mou
 
 pwd >> ~/Desktop/op_trace.log
 
-echo {query} >> $TRACEPATH/op_trace.log
+echo {query} >> ~/Desktop/op_trace.log
 
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then
 
